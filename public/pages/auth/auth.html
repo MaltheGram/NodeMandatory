@@ -1,0 +1,35 @@
+<!-- Registration -->
+<div class="container">
+    <div class="form-container signup-container">
+        <form action="/auth/admin" method="POST">
+            <label for="nane">Name</label>
+            <input id="signUpName" name="name" placeholder="Signup Name" type="text">
+
+            <label for="password">Password</label>
+            <input id="signUpPassword" name="password" placeholder="*****" type="password">
+
+            <button id="signup-btn" type="submit">Sign up!</button>
+
+        </form>
+    </div>
+
+    <!-- Login -->
+    <div class="form-container login-container">
+        <form action="/login/admin" method="POST">
+            <label for="name">Name</label>
+            <input id="loginName" name="name" placeholder="Login Name" type="text">
+
+            <label for="password">Password</label>
+            <input id="loginPassword" name="password" placeholder="*****" type="password">
+
+            <button id="login-btn" type="submit">Login!</button>
+
+
+        </form>
+
+    </div>
+</div>
+
+
+<script src="pages/auth/auth.js"></script>
+

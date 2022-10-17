@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "name": "mandatory_1",
+  "version": "1.0.0",
+  "description": "Mandatory assignment for Node JS course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-dev": "mysql.server start && cross-env PORT=8080 nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Malthe Gram",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20",
+    "sass-loader": "^13.0.2",
+    "mysql": "^2.18.1",
+    "dotenv": "^16.0.3",
+    "bcrypt": "^5.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

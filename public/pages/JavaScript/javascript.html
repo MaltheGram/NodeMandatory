@@ -1,0 +1,151 @@
+<div class="timeline">
+    <div class="container left">
+        <div class="content">
+            <h2>Variables in JavaScript</h2>
+            <span>
+                A variable is a “named storage” for data. We can use variables to store goodies, visitors, and other data.
+                To create a variable in JavaScript, we use the let or const keyword.
+                The statement below declares a variable with the name “message”:
+                const message = "Hello World"
+                Constants are block-scoped, much like variables declared using the let keyword.
+                The value of a constant can't be changed through reassignment (i.e. by using the assignment operator),
+                and it can't be redeclared (i.e. through a variable declaration).
+                However, if a constant is an object or array its properties or items can be updated or removed.
+            </span>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <h2>Callback Functions</h2>
+            <span>
+                A callback function is a function passed into another function as an argument,
+                which is then invoked inside the outer function to complete some kind of routine or action.
+            </span>
+
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <h2>Arrow Functions</h2>
+            <span>Arrow functions is another way to make a function. It <b>can</b> be more compact</span>
+            <code>
+                const myArrowFunction = (a, b) => a + b
+            </code>
+            <br>
+            vs
+            <br>
+            <code>
+                function myNormalFunction(a, b) {
+                return a + b
+                }
+            </code>
+            <ul>
+                <li>Arrow functions don't have their own bindings to this, arguments or super, and should not be used as
+                    methods.
+                </li>
+                <li>Arrow functions don't have access to the new.target keyword.</li>
+                <li> Arrow functions aren't suitable for call, apply and bind methods, which generally rely on
+                    establishing a scope.
+                </li>
+                <li>Arrow functions cannot be used as constructors.</li>
+                <li>Arrow functions cannot use yield, within its body.</li>
+            </ul>
+            <sub>Source: <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"
+                    target="_blank">Developer
+                Mozilla</a></sub>
+
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <h2>Loops</h2>
+            <span>In JavaScript we have different ways of looping over an iterable. For instance:</span>
+            <ul>
+                <li><b>For loop</b> <sub><a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank">Read
+                    more</a></sub></li>
+                <li><b>Map</b> → The map() method creates a new array populated with the results of the called upon
+                    arrary
+                </li>
+                <li><b>Filter</b> → The filter() method creates a shallow copy of a portion of a given array, filtered
+                    down to
+                    just the elements from the given array that pass the test implemented by the provided function.
+                </li>
+                <li><b>Reduce</b> → The reduce() method executes a user-supplied "reducer" callback function on each
+                    element of the array, in order, passing in the return value from the calculation on the preceding
+                    element. The final result of running the reducer across all elements of the array is a single value.
+                </li>
+                <li><b>ForEach</b> → The ForEach() method executes a given function one time for each element in the
+                    array
+                </li>
+                <sub>Source: <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Developer
+                    Mozilla</a></sub>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container left">
+        <div class="content">
+            <h2>Importing & Exporting</h2>
+            <span>ECMAScript modules are the official format for JavaScript code to be reused.
+            In this course the syntax we have used for exporting & importing:
+            </span>
+            <br>
+            <code>
+                export const myFunction = () => { /// Execute code }
+            </code>
+            <br>
+            <code>
+                import { myFunction } from "/path"
+            </code>
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <h2>Type Coercion</h2>
+            <span>
+                In JavaScript when we want to compare two values, we will use <b>===</b> rather than <b>==</b>.
+                 </span>
+            <pre>
+                <code>
+                    const price = 12
+                    const priceString = "12"
+                    const concat = price + priceString
+
+                    result: "1212"
+                </code>
+            </pre>
+            <span>
+            You will not necessarily compare a string to a number, and expect this result.
+            So if we wanted compare these two values, there's one way we would <b>NOT</b> do it, and one proper way.
+            </span>
+            <pre>
+                <code>
+                    const price = 12
+                    const priceString = "12"
+                    const isSame = price == priceString
+
+                    result: true
+
+                    const isSame = price === priceString
+
+                    result: false
+                </code>
+            </pre>
+            <span>
+                Moral of the story: Always use === to compare variables and be aware of type coercion.
+                <br>
+                <sub>Read more: <a
+                        href="https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/"
+                        target="_blank">GeekForGeeks</a></sub>
+            </span>
+
+        </div>
+    </div>
+</div>
+

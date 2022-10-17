@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.sections {
+  display: block;
+}
+.sections pre {
+  margin-bottom: 1.5em;
+}
+.sections h2 {
+  text-align: center;
+  margin: 0 0 1.125em 0;
+}
+.sections p {
+  margin: 0 10em;
+  text-align: center;
+}
+.sections .center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.sections .get {
+  background-color: #606c38;
+  height: fit-content;
+}
+.sections .get pre {
+  font-style: italic;
+  background-color: #343434;
+  width: fit-content;
+  color: aliceblue;
+}
+
+.post {
+  background-color: #283618;
+  height: fit-content;
+  color: #fefae0;
+}
+.post pre {
+  padding: 15px;
+  font-style: italic;
+  background-color: #343434;
+  width: fit-content;
+  color: aliceblue;
+}
+
+.put {
+  background-color: #fefae0;
+  height: fit-content;
+}
+.put pre {
+  padding: 15px;
+  font-style: italic;
+  background-color: #343434;
+  color: aliceblue;
+  width: fit-content;
+}
+
+.patch {
+  background-color: #dda15e;
+  height: fit-content;
+}
+.patch pre {
+  padding: 15px;
+  font-style: italic;
+  background-color: #343434;
+  width: fit-content;
+  color: aliceblue;
+}
+
+.delete {
+  background-color: #bc6c25;
+  height: fit-content;
+  color: aliceblue;
+}
+.delete pre {
+  padding: 15px;
+  font-style: italic;
+  background-color: #343434;
+  width: fit-content;
+}
+
+/*# sourceMappingURL=http.css.map */

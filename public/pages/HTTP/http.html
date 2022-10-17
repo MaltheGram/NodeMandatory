@@ -1,0 +1,147 @@
+<div class="sections">
+    <section class="get" id="get">
+        <br>
+        <h2> GET Method</h2>
+        <p>The GET method is used to retrieve information from the given server using a given URL. Requests using GET
+            should only retrieve data and should have no other effect on the data.
+            The server will respond with the given data, often in a JSON format.
+            The GET Method is what we call idempotent, which means that if we were to make the same request again,
+            the result will be the same.
+        </p>
+        <br>
+        <br>
+        <h2>Snippet</h2>
+        <div class="center">
+            <pre>
+    app.get("/api/pokemon", (req, res) => {
+        fetch("https://pokeapi.co/api/v2/pokemon")
+            .then(response => response.json())
+            .then(result => res.send({data: result}));
+    })
+            </pre>
+        </div>
+
+    </section>
+
+    <section class="post" id="post">
+        <br>
+        <h2>POST Method</h2>
+        <p>
+            The HTTP POST method sends data to the server. The type of the body of the request is indicated by the
+            Content-Type header.
+
+            The difference between PUT and POST is that PUT is idempotent: calling it once or several times successively
+            has the same effect (that is no side effect), where successive identical POST may have additional effects,
+            like passing an order several times.
+
+
+            POST is neither safe nor idempotent. It is therefore recommended for non-idempotent resource requests.
+            Making two identical POST requests will most-likely result in two resources containing the same information.
+        </p>
+        <br>
+        <br>
+        <h2>Snippet</h2>
+        <div class="center">
+            <pre>
+                app.post("/api/weapons", (req, res) => {
+                    const weapon = req.body
+                    weapon.id = ++currentId
+
+                    weapons.push(weapon)
+                    res.send({message: `Created new weapon: ${weapon.name}`})
+                })
+            </pre>
+        </div>
+    </section>
+
+    <section class="put" id="put">
+        <br>
+        <h2>PUT Method</h2>
+        <p>
+            The HTTP PUT request method creates a new resource or replaces a field of the target resource with
+            the request payload.
+            If the target resource does not have a current representation and the PUT request successfully creates one,
+            then the origin server must inform the user agent by sending a 201 (Created) response.
+            <br>
+            If the target resource does have a current representation and that representation is successfully modified
+            in accordance with the state of the enclosed representation, then the origin server will send a 200
+            (OK) response to indicate successful completion of the request.
+        </p>
+        <br>
+        <br>
+        <h2>Snippet</h2>
+        <div class="center">
+            <pre>
+                app.put("/api/weapons/:id",(req,res) => {
+                    const id = Number(req.params.id)
+                    const weaponToPatch = weapons.find((weapon) => weapon.id === id)
+                    const {name, price} = req.body
+
+
+                    weaponToPatch.name = name ? name : weapons[id].name
+                    weaponToPatch.price = price ? price : weapons[id].price
+
+                    res.send({message: `Weapon with id ${id} has been updated`})
+                })
+            </pre>
+        </div>
+    </section>
+
+    <section class="patch" id="patch">
+        <br>
+        <h2>PATCH Method</h2>
+        <p>The HTTP PATCH request method applies partial modifications to a resource.
+
+            A PATCH request is considered a set of instructions on how to modify a resource, vs PUT; which is a complete
+            representation of a resource.
+
+            A PATCH is not necessarily idempotent, although it can be. Whereas PUT is always idempotent.
+        </p>
+        <br>
+        <br>
+        <div class="center">
+            <pre>
+            app.patch("/weapons/:id", (req, res) => {
+                const foundIndex = weapons.findIndex(weapon => weapon.id === Number(req.params.id));
+                if (foundIndex !== -1) {
+                const foundWeapon = weapons[foundIndex];
+                const weaponToUpdate = { ...foundWeapon, ...req.body, id: Number(req.params.id) };
+                weapons[foundIndex] = weaponToUpdate;
+                res.send({ data: weaponToUpdate });
+                } else {
+                res.status(404).send({ data: undefined, message: `No weapon found by id: ${req.params.id}` });
+                }
+            })
+            </pre>
+        </div>
+
+
+    </section>
+
+    <section class="delete" id="delete">
+        <br>
+        <h2>Delete Method</h2>
+        <p>
+            The DELETE request deletes the specified resource by a given ID.
+            DELETE is an idempotent http method.
+        </p>
+        <br>
+        <br>
+        <div class="center">
+            <pre>
+                app.delete("/api/weapons/:id", (req, res) => {
+                    const id = Number(req.params.id)
+                    const foundIndex = weapons.findIndex(weapon => weapon.id === id)
+
+                    if (foundIndex !== -1){
+                        const deletedWeapon = weapons.splice(foundIndex,1)[0]
+                        res.send({data: deletedWeapon})
+
+                    } else {
+                        res.status(404).send({data: undefined, message: `No weapon with id: ${id}`})
+                    }
+                })
+            </pre>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,48 @@
+.box {
+  display: grid;
+}
+.box img {
+  width: 100%;
+}
+
+.collapsible {
+  background-color: rebeccapurple;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  max-width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+  background-color: green;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background: linear-gradient(45deg, #595245, #353129);
+  color: aliceblue;
+}
+.content span {
+  margin: 5px 0 5px 0;
+}
+.content a {
+  text-decoration: none;
+  color: inherit;
+}
+.content a:hover {
+  color: cornflowerblue;
+  text-decoration: underline;
+}
+.content .snippet {
+  background: dimgrey;
+  font-style: italic;
+}
+
+/*# sourceMappingURL=node.css.map */

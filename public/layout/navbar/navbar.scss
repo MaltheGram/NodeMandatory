@@ -1,0 +1,43 @@
+@import "../../global.css";
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: rebeccapurple;
+  overflow: hidden;
+  scroll-behavior: smooth;
+
+  .container {
+    height: calc(3em + 4px);
+
+    section {
+      padding: calc(1em + 2px);
+      width: 100vw;
+
+      a {
+        border: solid 1px transparent;
+        padding: 1em;
+        color: aliceblue;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  nav {
+    background: blue;
+  }
+}

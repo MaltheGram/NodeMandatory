@@ -1,0 +1,38 @@
+Variables
+Rest API conventions
+HTTP
+Callback functions
+Clean Code / Code conventions
+HTTPS
+Loops
+Arrow functions
+Express
+Import/exporting (MODULES)
+package.json / npm install expresss
+Redirecting (CLIENTSIDE & SERVERSIDE)
+scripts
+
+REST API
+
+
+Node stuff
+    express
+    nodemon
+    cross-env
+    package.json
+    redirecting
+
+JavaScript
+    Variables
+    Callback functions
+    Arrow functions
+    Loops
+    importing / exporting
+    Type Coercion
+
+HTTP
+    Get
+    Post
+    Put
+    Patch
+    Delete

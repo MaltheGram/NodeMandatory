@@ -1,0 +1,89 @@
+<div class="box">
+    <img src="/pages/Node/images/nodejs.png">
+
+    <button class="collapsible" type="button">Express</button>
+    <div class="content">
+        <span>
+            Express is a popular Node web framework. It provides mechanisms such as:
+            <ul>
+                <li>Write handlers for requests with different HTTP methods at different URL paths (routes)</li>
+                <li>Define a public path for files to be rendered.</li>
+                <li>Set common web application settings like the port to use for connecting, and the location of templates that are used for rendering the response</li>
+            </ul>
+            In other words we have used Express to start a server and listen on a given port, in our case 8080 mainly.
+            With Express, we can use different HTTP methods in which we have used GET, POST, PATCH / PU and DELETE.
+            <br>
+            Read more on that <a href="/http#http">here!</a>
+            We have also
+        </span>
+    </div>
+
+    <button class="collapsible" type="button">Nodemon</button>
+    <div class="content">
+        <span>
+            Nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+        </span>
+    </div>
+
+    <button class="collapsible" type="button">Cross-Env</button>
+    <div class="content">
+        <span>
+            With windows there can be some issues when setting environment variables. This is where Cross-Env comes in and fixes the issues.
+            Simply adding a script to <i>package.json</i>:
+            <br>
+            <pre>cross-env PORT=8080 nodemon app.js</pre>
+        </span>
+    </div>
+
+    <button class="collapsible" type="button">Package.json</button>
+    <div class="content">
+        <span>
+            Package.json is responsible for a lot, and it contains some our really important stuff:
+            <ul>
+                <li>Dependencies</li>
+                <li>Node scripts</li>
+                <li>Type module: which is how we determine our javascript import / export syntax</li>
+                <li>Application version</li>
+                <li>Author</li>
+                <li>...and a lot more!</li>
+            </ul>
+        </span>
+    </div>
+
+    <button class="collapsible" type="button">Redirecting</button>
+    <div class="content">
+        <span>
+            When hitting a certain endpoint, we can redirect a user to a more suitable endpoint. As an example
+            <pre class="snippet">
+                <code>
+                app.get("/lookunderthebed", (req,res) => {
+                    if (req.query.flashlight) {
+                        return res.send({message: "You are safe"})
+                }
+                res.redirect("/monsters")
+                </code>
+            </pre>
+        In this example we redirect depending on some query parameter. This is just one use case of many.
+    </span>
+    </div>
+
+    <button class="collapsible" type="button">Server Side Rendering</button>
+    <div class="content">
+        <span>
+            When we use Server Side Rendering, also referred to as SSR,
+            SSR is the ability of a web application to render the web page on the server instead of rendering it in the browser.
+            When the page arrived at the client-side, it is fully rendered because the server-side has fully rendered the page before it was sent by the server to the client.
+            <br>
+            We use SSR when:
+            <ul>
+                <li>If SEO is our priority, typically when we are building a blog site, and we want everyone who searching on Google go to our website, then SSR is your choice.</li>
+                <li>If the content of your website doesn't need much user interaction</li>
+                <li>If your website needs a faster initial loading.</li>
+            </ul>
+
+        </span>
+    </div>
+
+</div>
+
+<script src="../pages/cli/cli.js" type="module"></script>

@@ -1,0 +1,47 @@
+.container {
+  columns: 2;
+  gap: 0;
+}
+.container .form-container {
+  height: 100vh;
+  display: flex;
+  width: 100%;
+}
+.container input {
+  border: none;
+  background: linear-gradient(90deg, #000000, #EEE);
+  display: block;
+  padding: 14px 20px;
+  width: 25em;
+  color: #EEE;
+}
+.container input::placeholder {
+  color: aliceblue;
+}
+.container label {
+  color: #EEE;
+}
+.container button {
+  margin-top: 15px;
+  padding: 14px;
+  font-size: 1em;
+  width: 100%;
+  background: linear-gradient(90deg, #000000, #EEE);
+  border: none;
+  border-radius: 25px;
+}
+.container button:hover {
+  background: linear-gradient(180deg, #EEE, #000000);
+}
+.container .signup-container {
+  background: linear-gradient(90deg, #000000, #EEE);
+  justify-content: center;
+  align-items: center;
+}
+.container .login-container {
+  background: linear-gradient(90deg, #EEE, #000000);
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=auth.css.map */
