@@ -16,34 +16,4 @@ router
     })
 
 
-/*.post("login/auth/admin/postContent", (req, res) => {
-    const content = req.body
-
-    db.getConnection(async (error, connection) => {
-        if (error) throw (error)
-
-        const sqlSearch = "SELECT * FROM POSTS WHERE user_name = ? "
-        const searchQuery = mysql.format(sqlSearch, [content])
-
-        const sqlInsert = "INSERT INTO POSTS VALUES (0, ?)"
-        const insertQuery = mysql.format(sqlInsert, [content])
-
-        await connection.query(searchQuery, async (error, result) => {
-            {
-                await connection.query(insertQuery, (error, result) => {
-                    connection.release()
-
-                    if (error) throw error
-                    console.log("-----> Created new user")
-                    console.log(result.insertId)
-                    res.sendStatus(201)
-                })
-            }
-
-        })
-
-
-    })
-})
-*/
 export default router

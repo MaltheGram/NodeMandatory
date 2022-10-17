@@ -23,6 +23,7 @@ app.use(httpRouter)
 app.use(nodeRouter)
 app.use(jsRouter)
 app.use(restApiRouter)
+app.use(adminRouter)
 
 export const db = mysql.createPool({
     connectionLimit: 100,
@@ -132,6 +133,36 @@ app.post("/login/admin", (req, res) => {
     }) //end of db.connection()
 }) //end of app.post()
 
+// Posting docs
+app.post("/login/auth/admin", (req, res) => {
+    const content = req.body.content
+
+    db.getConnection(async (error, connection) => {
+        if (error) throw (error)
+
+        const sqlSearch = "SELECT * FROM POSTS WHERE user_name = ? "
+        const searchQuery = mysql.format(sqlSearch, [content])
+
+        const sqlInsert = "INSERT INTO POSTS VALUES (0, ?)"
+        const insertQuery = mysql.format(sqlInsert, [content])
+
+        await connection.query(searchQuery, async (error, result) => {
+            {
+                await connection.query(insertQuery, (error, result) => {
+                    connection.release()
+
+                    if (error) throw error
+                    console.log("-----> Created new user")
+                    console.log(result.insertId)
+                    res.sendStatus(201)
+                })
+            }
+
+        })
+
+
+    })
+})
 
 app.listen(PORT, () => {
     console.log("Server running on", PORT)
