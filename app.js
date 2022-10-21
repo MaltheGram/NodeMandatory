@@ -152,9 +152,8 @@ app.post("/login/auth/admin", (req, res) => {
                     connection.release()
 
                     if (error) throw error
-                    console.log("-----> Created new user")
-                    console.log(result.insertId)
-                    res.sendStatus(201)
+                    console.log("Could not post")
+                    res.sendStatus(500)
                 })
             }
 
