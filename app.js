@@ -135,7 +135,8 @@ app.post("/login/admin", (req, res) => {
 
 // Posting docs
 app.post("/login/auth/admin", (req, res) => {
-    const content = req.body.content
+    const content = req.body.textToPost
+    console.log(content)
 
     db.getConnection(async (error, connection) => {
         if (error) throw (error)
@@ -152,14 +153,12 @@ app.post("/login/auth/admin", (req, res) => {
                     connection.release()
 
                     if (error) throw error
-                    console.log("Could not post")
-                    res.sendStatus(500)
+                    console.log("Inserted 1 record")
+                    res.sendStatus(200)
                 })
             }
 
         })
-
-
     })
 })
 
